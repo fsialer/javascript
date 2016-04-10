@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>	
+<script type="text/javascript">
+	function tutor(nombre,apellido){
+			this.nombre=nombre;
+			this.apellido=apellido;
+			this.saludar=function(){
+				console.log("Hola soy "+this.nombre+this.apellido);
+			}
+		}
+		//agrega una propia nueva al prototipi
+		tutor.prototype.edad=22;
+
+		var fernando=new tutor("fernando", "sialer");
+		var jose=new tutor("jose", "gonzales");
+		console.log(fernando.edad);
+		console.log(jose.edad);
+		
+		
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<div clas="close"></div>
+	<form id="form">
+		<input type="email" placeholder="correo" name="mails[]" />
+	</form>
+	<button id="btn">Agregar mas correos</button>
+	<script type="text/javascript">
+	bind_close();
+		//crear y crear nodos
+		$("#btn").addEventListener("click",function(){
+
+		var input=document.createElement("input");
+		input.setAttribute("type","email");
+		input.setAttribute("placeholder","Correo");
+		input.setAttribute("name","mails[]");
+
+		$("#form").appendChild(input);//agrega los elementos al final del form
+		my_alert("se agrego un numero campoi");
+			console.log(input);
+	});
+		function bind_close(){
+			var elements=document.querySelectorAll(".close");
+			for (var i = elements.length - 1; i >= 0; i--) {
+				var el=elements[i];
+				el.addEventListener("click",function(){
+					this.parentNode.style.display="none";
+				})
+			}
+
+		}
+
+		
+		function my_alert(msg){
+			var div=document.createElement("div");
+			div.setAttribute("class","alert");
+			div.innerHTML=msg;
+			var close=document.createElement("span");
+			close.style.float="right";
+			close.innerHTML="X";
+			close.setAttribute("class","close");
+			div.appendChild(close);
+			//insertBefore agrega los elmentos antes del padre
+			$("body").insertBefore(div,$("body").firstChild);
+			bind_close();
+		}
+		function $(selector){
+			return document.querySelector(selector);
+		}
+
+	</script>
+
+</body>
+</html>

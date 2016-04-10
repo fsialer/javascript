@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var curso={
+			titulo:"Curso Javascript",
+			videos:1,
+			tutor_value:"fernando",
+			saludar:function(){
+				console.log("hola bienvenido");
+			},
+			getTutor:function(){
+				return this.tutor_value;
+			},
+			setTutor:function(tutor_value){
+				this.tutor_value=tutor_value;
+			},//nueva declaracion del los get and set
+			get tutor(){
+				return this.tutor_value;
+			},
+			set tutor(tutor_value){
+				if (tutor_value==="" || (typeof tutor_value==="undefined")) {return;}
+				this.tutor_value=tutor_value;
+			}
+
+		};
+		curso.tutor="jose";
+		console.log(curso.tutor);
+		
+
+	</script>
+
+</body>
+</html>
